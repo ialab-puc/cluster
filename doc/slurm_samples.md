@@ -69,11 +69,11 @@ Con la finalidad de mejorar el funcionamiento del script, se debe prestar atenci
 Para un mayor control sobre los trabajos, vea la [documentación de sbatch](slurm.schedmd.com/sbatch.html).
 
 El siguiente script describe un trabajo con las siguientes caracteríticas:
-* 24 tareas.
-* 12 tareas por nodo
-*  6 tareas por socket
 
-Por lo tanto serán 24 tareas, cada una con un core. Luego se dividiran en dos nodos, para luego separarse las 12 tareas en dos socket. Entonces cada CPU en los dos nodos tendrá 6 tareas, cada una con su propio core dedicado.
+* 24 tareas en total.
+* 12 tareas por nodo. (2 nodos)
+* 6 tareas por socket. (2 sockets por nodo)
+* 1 tarea por core. (6 cores por socket)
 
 Slurm es muy flexible acerca del manejo de los recursos, permitiendo al usuario ser bastante específico en cuanto a los recursos que desea utilizar.
 
