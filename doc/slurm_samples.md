@@ -69,6 +69,7 @@ Con la finalidad de mejorar el funcionamiento del script, se debe prestar atenci
 Para un mayor control sobre los trabajos, vea la [documentación de sbatch](slurm.schedmd.com/sbatch.html).
 
 El siguiente script describe un trabajo con las siguientes caracteríticas:
+
 * 24 tareas en total.
 * 12 tareas por nodo. (2 nodos)
 * 6 tareas por socket. (2 sockets por nodo)
