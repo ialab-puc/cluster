@@ -35,7 +35,7 @@ scp -r /home/usuario/repos usuario@hercules.ing.puc.cl:~/repos
 ### Slurm
 
 El Cluster utiliza el sistema de colas de Slurm (Simple Linux Universal Resource Manager) para manejar y organizar los recursos y tareas.
-#### [Guía de uso de Slurm](/doc/Guia.md)
+#### [Guía de uso de Slurm](/doc/slurm_guide.md)
 
 ### Nodos del Cluster
 
