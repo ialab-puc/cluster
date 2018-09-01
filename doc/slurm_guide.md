@@ -195,3 +195,5 @@ cd /slurm/gpuExamples
 ./run_my_gpu_code
 
 ```
+### Scripts básicos
+En este [documento](/doc/slurm_samples.md) podrás encontrar algunos scripts básicos para el uso de slurm en determinados casos.
