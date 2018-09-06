@@ -1,22 +1,24 @@
 # Cluster IALAB
 
 
-IALAB es un cluster ubicado en la Pontificia Universidad Católica de Chile el cual tiene 196 cores. Los nodos que cuentan con GPU integrada corresponden a Titan, Icarus, Hydra, Scylla y Ahsoka. 
+**IALAB-cluster** es el *cluster* del grupo [IALAB](https://ialab.ing.puc.cl), de la Pontificia Universidad Católica de Chile.
+El cluster cuenta con 248 cores divididos en 10 nodos y su uso principal es como plataforma de experimentación para las investigaciones
+realizadas por el grupo IALAB.
+
 
 
 ### Obteción de acceso
 
-Para tener acceso al cluster debes poseer una cuenta, si no tienes una debes completar el siguiente [formulario](https://docs.google.com/forms/d/e/1FAIpQLSfbmOJrBAHTIk2atyXRN_vPMGN94Bx7OMLBPAd23ew6xGzh0w/viewform) con tus datos.
+Para tener acceso al cluster debes poseer una cuenta. Si no tienes una debes completar el siguiente [formulario](https://docs.google.com/forms/d/e/1FAIpQLSfbmOJrBAHTIk2atyXRN_vPMGN94Bx7OMLBPAd23ew6xGzh0w/viewform) con tus datos.
 
 ### Ingresar al Cluster
 
-Una vez que tengas una cuenta en IALAB, deberías poder conectarte al cluster con el password que se te fue otorgado. Para acceder a los nodos del cluster deber hacer uso de ssh, para los usuarios de Linux y Mac esté viene ya implementado mientras que para usuarios de Windows recomendamos el uso de [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+Una vez que tengas una cuenta en IALAB podrás conectarte al cluster con el _password_ que se te fue otorgado. Para acceder a los nodos del _cluster_ debes hacer uso de `ssh`. Para los usuarios de Linux y Mac, el comando `ssh` ya viene ya instalados en la consola. Para usuarios de Windows recomendamos el uso de [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) o [MobaXterm](https://mobaxterm.mobatek.net/).
 
 Desde la terminal te puedes conectar usando el siguiente comando:
 
-
 ```
-ssh usuario@hercules.ing.puc.cl
+ssh usuario@kraken.ing.puc.cl
 ```
 
 
@@ -41,7 +43,7 @@ El Cluster utiliza el sistema de colas de Slurm (Simple Linux Universal Resource
 
 | Nodo     | Modelo                | GPU                   | Cores(fis) | Cores(vir) |
 | -------- | --------------------- | --------------------- | ---------- | ---------- |
-| Hercules | Dell PowerEdge SC1435 | N/A                   | 8          | 8          |
+| hercules | Dell PowerEdge SC1435 | N/A                   | 8          | 8          |
 | ahsoka   | Supermicro Thinkmate  | 4 x Titan X           | 20         | 40         |
 | caleuche | Supermicro 815-6      | N/A                   | 8          | 40         |
 | hydra    | Supermicro Thinkmate  | 8 x GeForce GTX1080Ti | 20         | 40         |
