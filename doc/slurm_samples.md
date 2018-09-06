@@ -1,5 +1,7 @@
 # Ejemplos Slurm Scripts
-A continución se muestran los siguentes scripts tienen el objetivo de servir como base para tu código.
+A continución se muestran los siguentes scripts que tienen el objetivo de servir como base para tu código.
+
+Se encuentran disponibles en la carpeta  [samples](/doc/samples).
 
 ## Un Proceso
 Este script tiene la esctructura básica para hacer correr un programa en Slurm.
@@ -8,7 +10,7 @@ Recordar`$SLURM_JOBID` es una variable de entorno la cual es seteada por Slurm c
 
 ```bash
 #!/bin/bash
-#SBATCH --job-name=nombre_trabajo   # Nombre del trabajo
+#SBATCH --job-name=primes           # Nombre del trabajo
 #SBATCH --mail-type=END,FAIL        # Enviar eventos al mail (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=usuario@uc.cl   # El mail del usuario
 #SBATCH --ntasks=1                  # Correr una sola tarea
@@ -16,13 +18,11 @@ Recordar`$SLURM_JOBID` es una variable de entorno la cual es seteada por Slurm c
 #SBATCH --time=0-00:05:00           # Timpo limite d-hrs:min:sec
 #SBATCH --output=test_%j.log        # Nombre del output (%j se reemplaza por el ID del trabajo)
 #SBATCH --error=test_%j.err         # Output de errores (opcional)
-#SBATCH --workdir=/user/mi_usuario  # Direccion donde correr el trabajo
-
 pwd; hostname; date
  
-echo "Corrinedo un programa de python en un solo CPU core"
+echo "Corriendo un programa de python en un solo CPU core"
 
-python plot_template.py
+python primes.py
 
 echo "Finished with job $SLURM_JOBID"
 date
@@ -34,21 +34,20 @@ Este script permite correr programas que requieran más de un thread, como es el
 
 ```bash
 #!/bin/bash
-#SBATCH --job-name=nombre_trabajo   # Nombre del trabajo
+#SBATCH --job-name=matrixMul        # Nombre del trabajo
 #SBATCH --mail-type=END,FAIL        # Enviar eventos al mail (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=usuario@uc.cl   # El mail del usuario
 #SBATCH --ntasks=1                  # Correr una sola tarea
 #SBATCH --mem=500mb                 # Memoria para el trabajo
 #SBATCH --time=0-00:05:00           # Timpo limite d-hrs:min:sec
 #SBATCH --output=test_%j.log        # Nombre del output (%j se reemplaza por el ID del trabajo)
-#SBATCH --workdir=/user/mi_usuario  # Direccion donde correr el trabajo
 #SBATCH --cpus-per-task=4           # Numero de CPU cores por tarea
 pwd; hostname; date
 
 export OMP_NUM_THREADS=4
 echo "Corriendo el programa en $SLURM_CPUS_ON_NODE CPU cores"
 
-./prog_multi_proc
+/user/slurm/samples/openmp/matrixMul
 
 date
 ```
@@ -69,7 +68,6 @@ Con la finalidad de mejorar el funcionamiento del script, se debe prestar atenci
 Para un mayor control sobre los trabajos, vea la [documentación de sbatch](slurm.schedmd.com/sbatch.html).
 
 El siguiente script describe un trabajo con las siguientes caracteríticas:
-
 * 24 tareas en total.
 * 12 tareas por nodo. (2 nodos)
 * 6 tareas por socket. (2 sockets por nodo)
@@ -104,25 +102,24 @@ date
 ## Array
 El siguiente código permite correr múltiples procesos a la vez en forma de Array para lograr paralelizar trabajos externamente. En este ejemplo usamos un trabajo de "Un Proceso" pero se puede aplicar a todos los casos vistos en este documento.
 
-La variable de entorno `$SLURM_ARRAY_TASK_ID` es seteada por Slurm para indicar el índice del arreglo. Puede ser usada como input, por ejemplo: `python test.py $SLURM_ARRAY_TASK_ID`.
+La variable de entorno `$SLURM_ARRAY_TASK_ID` es seteada por Slurm para indicar el índice del arreglo.
 
 Para más información se recomienda leer el wiki de "University of Florida" sobre [Slurm Job Arrays](https://help.rc.ufl.edu/doc/SLURM_Job_Arrays) (en inglés).
 
 
 ```bash
 #!/bin/bash
-#SBATCH --job-name=nombre_trabajo   # Nombre del trabajo
-#SBATCH --mail-type=END,FAIL        # Enviar eventos al mail (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=usuario@uc.cl   # El mail del usuario
-#SBATCH --ntasks=1                  # Correr una sola tarea
-#SBATCH --mem=1gb                   # Job Memory
-#SBATCH --time=0-00:05:00           # Timpo limite d-hrs:min:sec
-#SBATCH --output=array_%A-%a.log    # Output (%A se reemplaza por el ID del trabajo maestro, %a se reemplaza por el indice del arreglo)
-#SBATCH --array=1-100%10            # 100 procesos, 10 simultáneos
-#SBATCH --output=test_%j.log        # Nombre del output (%j se reemplaza por el ID del trabajo)
+#SBATCH --job-name=average_random         # Nombre del trabajo
+#SBATCH --mail-type=END,FAIL              # Enviar eventos al mail (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=usuario@uc.cl         # El mail del usuario
+#SBATCH --ntasks=1                        # Correr una sola tarea
+#SBATCH --mem=1gb                         # Job Memory
+#SBATCH --time=0-00:05:00                 # Timpo limite d-hrs:min:sec
+#SBATCH --output=results/array_%A-%a.log  # Output (%A se reemplaza por el ID del trabajo maestro, %a se reemplaza por el indice del arreglo)
+#SBATCH --array=1-100%10                  # 100 procesos, 10 simultáneos
 pwd; hostname; date
 
-echo This is task $SLURM_ARRAY_TASK_ID
+python3 /user/slurm/samples/array/average.py $SLURM_ARRAY_TASK_ID
 
 date
 ```
@@ -132,22 +129,21 @@ Este es un script para correr programas en CUDA o OpenCL que necesiten GPU. El s
 
 ```bash
 #!/bin/bash
-#SBATCH --job-name=nombre_trabajo    # Nombre del trabajo
+#SBATCH --job-name=MutiplyBy2        # Nombre del trabajo
 #SBATCH --output=test_%j.log         # Nombre del output (%j se reemplaza por el ID del trabajo)
 #SBATCH --error=test_%j.err          # Output de errores (opcional)
 #SBATCH --ntasks=2                   # Correr 2 tareas
 #SBATCH --cpus-per-task=1            # Numero de cores por tarea
 #SBATCH --distribution=cyclic:cyclic # Distribuir las tareas de modo ciclico
-#SBATCH --time=0-05:00:00            # Timpo limite d-hrs:min:sec
+#SBATCH --time=0-00:05:00            # Timpo limite d-hrs:min:sec
 #SBATCH --mem-per-cpu=2000mb         # Memoria por proceso
 #SBATCH --mail-type=END,FAIL         # Enviar eventos al mail (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=usuario@uc.cl    # El mail del usuario
-#SBATCH --partition=gpu              # Se tiene que elegir una partición de nodos con GPU
-#SBATCH --gres=gpu:tesla:2           # Usar 2 GPUs marca Tesla (se pueden usar N GPUs cualquiera de la manera --gres=gpu:N, la marca es un ejemplo)
+#SBATCH --partition=ialab-low        # Se tiene que elegir una partición de nodos con GPU
+#SBATCH --gres=gpu:2                 # Usar 2 GPUs (se pueden usar N GPUs de marca especifica de la manera --gres=gpu:marca:N)
 date;hostname;pwd
 
-srun --gres=gpu:tesla:1 -n 1 ./cuda_test
+srun --gres=gpu:1 -n 1 /user/slurm/samples/cuda/mulBy2
 
 date
 ```
-
