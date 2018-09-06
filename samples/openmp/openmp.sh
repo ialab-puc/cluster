@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=nombre_trabajo   # Nombre del trabajo
+#SBATCH --job-name=matrixMul        # Nombre del trabajo
 #SBATCH --mail-type=END,FAIL        # Enviar eventos al mail (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=usuario@uc.cl   # El mail del usuario
 #SBATCH --ntasks=1                  # Correr una sola tarea

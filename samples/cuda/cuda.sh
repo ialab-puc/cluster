@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=nombre_trabajo    # Nombre del trabajo
+#SBATCH --job-name=MultiplyBy2       # Nombre del trabajo
 #SBATCH --output=test_%j.log         # Nombre del output (%j se reemplaza por el ID del trabajo)
 #SBATCH --error=test_%j.err          # Output de errores (opcional)
 #SBATCH --ntasks=2                   # Correr 2 tareas
@@ -10,9 +10,8 @@
 #SBATCH --mail-type=END,FAIL         # Enviar eventos al mail (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=usuario@uc.cl    # El mail del usuario
 #SBATCH --partition=gpu              # Se tiene que elegir una partición de nodos con GPU
-#SBATCH --gres=gpu:tesla:2           # Usar 2 GPUs marca Tesla (se pueden usar N GPUs cualquiera de la manera --gres=gpu:N, la marca es un ejemplo)
-date;hostname;pwd
+#SBATCH --gres=gpu:1                 # Usar 2 GPUs  (se pueden usar N GPUs de marca especifica usando --gres=gpu:marca:N)
 
-srun --gres=gpu:tesla:1 -n 1 /user/slurm/samples/cuda/mulBy2
+srun --gres=gpu:1 -n 1 /user/slurm/samples/cuda/mulBy2
 
-date
+
