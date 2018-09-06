@@ -2,7 +2,7 @@
 
 ## Introducción a Slurm
 
-Slurm  correponde el administrador de trabajos dentro del cluster, es el encargado de gestionar las colas. En la actualidad es utilizado en el 60%  de los supercomputadores del [top500](https://www.top500.org/). La versión disponible en el cluster es la [15.08.7](https://slurm.schedmd.com/archive/slurm-15.08-latest/).
+**SLURM** es el administrador de trabajos o _scheduler_ del cluster. Es el encargado de gestionar las colas. En la actualidad es utilizado en el 60%  de los supercomputadores del [top500](https://www.top500.org/). La versión disponible en el cluster es la [15.08.7](https://slurm.schedmd.com/archive/slurm-15.08-latest/).
 
 #### Principales funciones
 * #### Gestión de tareas en la cola
@@ -11,14 +11,13 @@ Slurm  correponde el administrador de trabajos dentro del cluster, es el encarga
 
 ## ¿Dónde se encuentra?
 
-Slurm actualmente se encuentra funcionando en:
+*SLURM* utiliza una topología _master_/_worker_ donde el nodo principal (_master_), que ejecuta el servicio _slurmctld_ se encuentra en `kraken.ing.puc.cl`.
 
-* #### Caleuche
-* #### Trauco
+*SLURM* define grupos de nodos llamados _particiones_. Para cada partición se administra una _cola de trabajos_ con parámetros propios de duración máxima, cantidad de nodos y procesos a utilizar.
 
 ## Comandos básicos
 
-Existe documentación para cada comando en la página oficial de Slurm. Algunos de los comandos básicos para el uso del scheduler se encuentran detallados a continuación.
+Existe documentación para cada comando en la página oficial de *SLURM*. Algunos de los comandos básicos para el uso del scheduler se encuentran detallados a continuación.
 
 ### [sinfo](https://slurm.schedmd.com/sinfo.html)
 Imprime información sobre las particiones del cluster y sus estados.
