@@ -1,6 +1,5 @@
-# Documentación Cluster IALAB
+# Documentación
 
-* Descripción del cluster
-* Instrucciones de uso
-* Scripts de ejemplo para tareas comunes
+* [Instrucciones de uso de Slurm](/doc/slurm_guide.md)
+* [Scripts de ejemplo para tareas comunes](/doc/slurm_samples.md)
 
