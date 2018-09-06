@@ -1,12 +1,12 @@
 # Ejemplos Slurm Scripts
-A continución se muestran los siguentes scripts que tienen el objetivo de servir como base para tu código.
+A continuación se muestran los siguentes scripts que tienen el objetivo de servir como base para tu código.
 
 Se encuentran disponibles en la carpeta  [samples](/doc/samples).
 
 ## Un Proceso
-Este script tiene la esctructura básica para hacer correr un programa en Slurm.
+Este script tiene la estructura básica para hacer correr un programa en *SLURM*.
 
-Recordar`$SLURM_JOBID` es una variable de entorno la cual es seteada por Slurm con el ID del trabajo.
+`$SLURM_JOBID` es una variable de entorno la cual es seteada por *SLURM* con el ID del trabajo.
 
 ```bash
 #!/bin/bash
