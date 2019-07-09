@@ -4,12 +4,16 @@ Aquí se encuentra una lista de los datasets que se encuentran disponibles en el
 
 | Dataset | Ubicación | Tamaño | Nodo |Dominio |
 |---------|-----------|--------|------|------|
-|      AVA Actions 2.2  |  /vault/araymond/ava_frames         |   34Gb (videos), 119 Gb (frames)   |    scylla  | Video | 
-|       CLEVR 1.0  |    /mnt/nas2/GrimaRepo/datasets/CLEVR_v1.0/       |  64Gb (features)       |   Todos   | VQA |
+|      AVA Actions 2.2  |  /vault/araymond/ava_frames         |   34 Gb (videos), 119 Gb (frames)   |    scylla  | Video | 
+|       CLEVR 1.0  |    /mnt/nas2/GrimaRepo/datasets/CLEVR_v1.0/       |  64 Gb (features)       |   Todos   | VQA |
 |       Kinetics-400 |     /mnt/nas/GrimaRepo/datasets/kinetics-400      |       (videos), (frames)   |   Todos   | Video |
 |       Something to Something v2 |     /mnt/nas2/GrimaRepo/datasets/20BN-SOMETHING-SOMETHING-V2-1    |       (videos), (frames)   |   Todos   | Video |
-|       CrossTask |     /mnt/nas/GrimaRepo/datasets/CrossTask   |    32GB   (features), 85 Gb (videos)   |   Todos   | Video |
-|      Places-205 |     /mnt/nas/GrimaRepo/datasets/Places-205  |    32GB   (features), 85 Gb (videos)   |   Todos   | Imágenes |
+|       CrossTask |     /mnt/nas/GrimaRepo/datasets/CrossTask   |    32Gb   (features), 85 Gb (videos)   |   Todos   | Video |
+|      Places-205 |     /mnt/nas/GrimaRepo/datasets/Places-205  |       (features),  (videos)   |   Todos   | Imágenes |
+|     Stanford 2D-3D-S |     /mnt/nas2/GrimaRepo/datasets/Stanford-2D-3D-S_Dataset  |   874 Gb (features)   |   Todos   | Ambientes 2D y 3D |
+|      AgeDB |     /mnt/nas2/GrimaRepo/datasets/AgeDB  |      164 Mb (imágenes)   |   Todos   | Imágenes |
+|       IMDB-WIKI |     /mnt/nas2/GrimaRepo/datasets/VGGFace  |     9.5 Gb (imágenes)  |   Todos   | Imágenes |
+
 
 ## Procedimiento para agregar datasets al Cluster IALAB
 
