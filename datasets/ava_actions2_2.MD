@@ -14,7 +14,7 @@ Este dataset fue creado por Google para las tareas de localización y clasificac
 Para bajar el dataset se utilizó el código del siguiente repositorio:
 https://github.com/alainray/ava_downloader
 
-En el mismo repositorio se encuentra código para cortar los videos y convertirlos en frames. Los frames fueron sampleados a 25 fps. Sin embargo, algunos videos generaron sólo 24 frames.
+En el mismo repositorio se encuentra código para cortar los videos y convertirlos en frames. Los frames fueron sampleados a 25 fps. Sin embargo, algunos videos generaron sólo 24 frames. Bajar el dataset es relativamente rápido, tomando unas pocas horas. Cortar los videos toma unos cuantos días. El código no está optimizado para ocupar workers.
 
 Los frames están guardados en la carpeta *ava_frames*. Los frames de cada video están guardados en su propia carpeta. Cada frame queda guardado con el siguiente formato:
 ```
