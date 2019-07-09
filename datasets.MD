@@ -23,3 +23,4 @@ Aquí se encuentra una lista de los datasets que se encuentran disponibles en el
 * Asegurarse que en la ubicación del dataset se puedan encontrar todos los elementos para trabajar con éste como:
   * Features, sean imágenes, precomputados, texto, etc.
   * Archivos de train, val y test (en caso de haber).
+  * Archivos que identifiquen las relación entre clases e ids (en caso de haber)
