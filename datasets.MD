@@ -13,7 +13,7 @@ Aquí se encuentra una lista de los datasets que se encuentran disponibles en el
 |     Stanford 2D-3D-S |     /mnt/nas2/GrimaRepo/datasets/Stanford-2D-3D-S_Dataset  |   874 Gb (features)   |   Todos   | Ambientes 2D y 3D |
 |      AgeDB |     /mnt/nas2/GrimaRepo/datasets/AgeDB  |      164 Mb (imágenes)   |   Todos   | Imágenes |
 |       IMDB-WIKI |     /mnt/nas2/GrimaRepo/datasets/VGGFace  |     9.5 Gb (imágenes)  |   Todos   | Imágenes |
-
+|       [GQA](https://cs.stanford.edu/people/dorarad/gqa/about.html) |     /mnt-vault/scylla/GQA/  |     174 Gb (Spatial and Object features)  |   Todos   | VQA |
 
 ## Procedimiento para agregar datasets al Cluster IALAB
 
