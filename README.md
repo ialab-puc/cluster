@@ -52,7 +52,7 @@ El Cluster utiliza el sistema de colas de Slurm (Simple Linux Universal Resource
 | Total:   |                       | 26                    | 124        | 248        |
 
 ### Topología
-![Topología](/doc/ialabtopology.png)
+![Topología](/doc/topologia2019ialab.png)
 
 
 
