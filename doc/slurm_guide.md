@@ -2,7 +2,7 @@
 
 ## Introducción a Slurm
 
-**SLURM** es el administrador de trabajos o _scheduler_ del cluster. Es el encargado de gestionar las colas. En la actualidad es utilizado en el 60%  de los supercomputadores del [top500](https://www.top500.org/). La versión disponible en el cluster es la [15.08.7](https://slurm.schedmd.com/archive/slurm-15.08-latest/).
+**SLURM** es el administrador de trabajos o _scheduler_ del cluster. Es el encargado de gestionar las colas. En la actualidad es utilizado en el 60%  de los supercomputadores del [top500](https://www.top500.org/). La versión disponible en el cluster es la [ 17.11.2](https://slurm.schedmd.com/).
 
 #### Principales funciones
 * #### Gestión de tareas en la cola
@@ -23,16 +23,15 @@ Existe documentación para cada comando en la página oficial de *SLURM*. Alguno
 Imprime información sobre las particiones del cluster y sus estados.
 ##### Ejemplo:
 ```
-$ sinfo
+user@kraken:~$ sinfo
 PARTITION  AVAIL  TIMELIMIT  NODES  STATE NODELIST
-ialab-low*    up 3-00:00:00      2  down* makemake,titan
-ialab-low*    up 3-00:00:00      2   idle caleuche,tripio
-ialab-high    up   infinite      3   idle hydra,icarus,kraken
-zippedi       up   infinite      1  down* ahsoka
-dipbd         up    6:00:00      2  down* makemake,titan
-dipbd         up    6:00:00      3   idle caleuche,kraken,tripio
-all           up 3-00:00:00      4  down* ahsoka,makemake,titan,trauco
-all           up 3-00:00:00      5   idle caleuche,hydra,icarus,kraken,tripio
+ialab-low*    up 3-00:00:00      1  down* icarus
+ialab-low*    up 3-00:00:00      1    mix ahsoka
+ialab-high    up 8-00:00:00      3    mix grievous,hydra,scylla
+ialab-high    up 8-00:00:00      1   idle kraken
+all           up 3-00:00:00      1  down* icarus
+all           up 3-00:00:00      4    mix ahsoka,grievous,hydra,scylla
+all           up 3-00:00:00      1   idle kraken
 ```
 
 ### [squeue](https://slurm.schedmd.com/squeue.html)
@@ -40,15 +39,18 @@ Permite ver el estado de los trabajos que se encuentran en la cola de Slurm.
 Además es posile filtrar la información del trabajo por usuario usando el parametro ```-u [usuario]```.
 ##### Ejemplo:
 ```
-$ squeue
-JOBID   PARTITION NAME      USER      ST   TIME  NODES  NODELIST(REASON)
-605_28  ialab-low trabajito username  CG   0:00      1  caleuche
-605_35  ialab-low trabajito username  CG   0:00      1  tripio
-606     ialab-low main-job  user_abc  CG   0:00      1  tripio
+user@kraken:~$ squeue
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+               586 ialab-low train_mo fcorenco  R 1-16:55:44      1 ahsoka
+               587 ialab-low train_mo fcorenco  R 1-16:53:43      1 ahsoka
+               652 ialab-hig  jupyter rmantero  R   17:47:04      1 grievous
+               691 ialab-hig  jupyter fcorenco  R   16:38:51      1 grievous
+               697 ialab-hig train_sl fariquel  R   16:06:14      1 hydra
+               724 ialab-hig train_sl fariquel  R    9:32:31      1 hydra
+               727 ialab-hig train_sl fariquel  R    9:19:54      1 hydra
+               732 ialab-hig netx-dig   mgreco  R    8:30:29      1 scylla
+               742 ialab-hig     bash ceyzagui  R       0:06      1 scylla
 
-$ squeue -u user_abc
-JOBID   PARTITION NAME      USER      ST   TIME  NODES  NODELIST(REASON)
-606     ialab-low main-job  userabc   CG   0:00      1  tripio
 ```
 
 ### [srun](https://slurm.schedmd.com/srun.html)
