@@ -49,7 +49,7 @@ El Cluster utiliza el sistema de colas de Slurm (Simple Linux Universal Resource
 | kraken   | Dell Poweredge R730   | N/A                   |  24        |  48        |
 | grievous | Supermicro Thinkmate  | 8 x GeForce GTX1080Ti |  20        |  40        | 
 | scylla   | Supermicro Thinkmate  |<p>3 x TITAN RTX<p>1 x GeForce GTX 1080Ti<p>1 x GeForce RTX 2080 |  20        |  40        |
-| Total:   |                       | 22                    | 124        | 248        |
+| Total:   |                       | 26                    | 124        | 248        |
 
 ### Topología
 ![Topología](/doc/ialabtopology.png)
