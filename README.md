@@ -5,12 +5,6 @@
 El cluster cuenta con 248 cores divididos en 6 nodos y su uso principal es como plataforma de experimentación para las investigaciones
 realizadas por el grupo IALAB.
 
-
-
-### Obteción de acceso
-
-Para tener acceso al cluster debes poseer una cuenta.
-
 ### Ingresar al Cluster
 
 Una vez que tengas una cuenta en IALAB podrás conectarte al cluster con el _password_ que se te fue otorgado. Para acceder a los nodos del _cluster_ debes hacer uso de `ssh`. Para los usuarios de Linux y Mac, el comando `ssh` se encuentra disponible. Para usuarios de Windows recomendamos el uso de [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) o [MobaXterm](https://mobaxterm.mobatek.net/).
