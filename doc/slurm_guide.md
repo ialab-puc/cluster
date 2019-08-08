@@ -198,3 +198,12 @@ cd /slurm/gpuExamples
 ```
 ### Scripts básicos
 En este [documento](/doc/slurm_samples.md) podrás encontrar algunos scripts básicos para el uso de slurm en determinados casos.
+
+#### Valores por defecto en la configuración de SLURM
+|||
+|--|--|
+|Node | available in the partition|
+|Partition| ialab-low|
+|DefMemPerNode  | UNLIMITED|
+|MaxMemPerNode  | UNLIMITED|
+|MaxTasksPerNode| 512      |
