@@ -53,6 +53,28 @@ user@kraken:~$ squeue
 
 ```
 
+### sq (Comando creado por nosotros en el IA-Lab)
+Es una versión mejorada de squeue
+##### Ejemplo:
+```
+user@kraken:~$ sq
+
+ JOBID                   NAME   USER  TIME TASKS CPU CPU/TSK GPU MEM     NODE
+   291                mac-act  user1  1.9d     1                      (ended)
+     3   scan-notebook-server  user2     -     1   2       1   1   -  (hydra)
+   302                mac-act  user2     -     1   5       5   1   -  (hydra)
+   320                 rsscnn  user3     -     1   4       4   1 24G (scylla)
+   322                 rsscnn  user3     -     1   4       4   1 24G (scylla)
+   323                 rsscnn  user3     -     1   4       4   1 24G (scylla)
+   324                 rsscnn  user3     -     1   4       4   1 24G (scylla)
+   325                 rsscnn  user3     -     1   4       4   1 24G (scylla)
+   250             traindummy  user4  4.8d     1   2       1   1   - grievous
+   271    preprocess_hydra.sh  user5  4.8d     1  10      10   - 30G    hydra
+   273   preprocess_scylla.sh  user6  4.8d     1  10      10   - 30G   scylla
+   275 preprocess_grievous.sh  user7  4.8d     1  10      10   - 30G grievous
+
+```
+
 ### [srun](https://slurm.schedmd.com/srun.html)
 Envía un trabajo iterativo a la cola de ejecución de Slurm.
 Se debe definir el parametro ```-n [numero]``` para definir el numero de ejecucciones paralelas.
@@ -125,6 +147,72 @@ El comando hold detendrá la ejecución mientras que release la retomará.
 ```
 $ scontrol release 29
 ```
+
+### sshow <jobid> (Comando creado por nosotros en el IA-Lab)
+Es usado para ver información relevante de un trabajo
+
+##### Ejemplo:
+```
+$ sshow 250
+
+JobId      : 250
+JobName    : traindummy
+UserId     : username
+GroupId    : ialab
+Partition  : ialab-high
+NumNodes   : 1
+Nodes      : grievous
+ReqNodeList: grievous
+ExcNodeList: (null)
+NodeList   : grievous
+BatchHost  : grievous
+NumTasks   : 1
+CPUs/Task  : 1
+NumCPUs    : 2
+cpu        : 2
+Gres       : gpu:1
+GRES_IDX   : gpu(IDX:1)
+CPU_IDs    : 0-1
+RunTime    : 4-19:17:12
+TimeLimit  : 8-00:00:00
+SubmitTime : 2020-02-27T14:51:15
+StartTime  : 2020-02-27T17:24:19
+EndTime    : 2020-03-06T17:24:19
+JobState   : RUNNING
+ExitCode   : 0:0
+WorkDir    : /home/username
+Command    : /home/username/train_dummy.sh
+StdOut     : /home/username/logs/250-4294967294-dummy.log
+```
+
+
+### sfree (Comando creado por nosotros en el IA-Lab)
+Es usado para saber qué recursos hay disponibles en el cluster
+
+##### Ejemplo:
+```
+$ sfree
+
+|   NODE   |    RAM    |  CPU  | GPU |         FREE GPU DETAIL         |
+|----------+-----------+-------+-----+---------------------------------|
+|  KRAKEN  | 126G/126G | 48/48 |  -  |                                 |
+|----------+-----------+-------+-----+---------------------------------|
+|  AHSOKA  |  56G/126G | 26/40 | 3/4 |   3 x TITAN X (Pascal) (12.8G)  |
+|----------+-----------+-------+-----+---------------------------------|
+|  HYDRA   | 222G/252G |  0/40 | 3/8 | 2 x GeForce-GTX 1080 Ti (11.7G) |
+|          |           |       |     |      1 x Titan-RTX (25.4G)      |
+|----------+-----------+-------+-----+---------------------------------|
+|  SCYLLA  |  72G/126G | 24/40 | 5/7 |      2 x GeForce-GT (11.7G)     |
+|          |           |       |     |      1 x GeForce-RT (11.6G)     |
+|          |           |       |     |      1 x GeForce-RT (8.4G)      |
+|          |           |       |     |      1 x Titan-RTX (25.4G)      |
+|----------+-----------+-------+-----+---------------------------------|
+| GRIEVOUS | 222G/252G |  4/40 | 4/8 | 4 x GeForce-GTX 1080 Ti (11.7G) |
+|----------+-----------+-------+-----+---------------------------------|
+|  ICARUS  | 126G/126G | 40/40 | 1/1 |      1 x Tesla K40m (12.0G)     |
++----------+-----------+-------+-----+---------------------------------+
+```
+
 
 ## Variables de entorno
 
