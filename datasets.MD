@@ -4,7 +4,6 @@ Aquí se encuentra una lista de los datasets que se encuentran disponibles en el
 
 | Dataset | Ubicación | Tamaño | Nodo |Dominio |
 |---------|-----------|--------|------|------|
-|      [AVA Actions 2.2](https://github.com/ialab-puc/cluster/blob/datasets/datasets/ava_actions2_2.MD)  |  /vault/araymond    |   34 Gb (videos), 119 Gb (frames)   |    scylla  | Video | 
 |       [CLEVR 1.0](https://github.com/ialab-puc/cluster/blob/datasets/datasets/clevr1_0.MD)  |    /mnt/nas2/GrimaRepo/datasets/CLEVR_v1.0/       |  64 Gb (features)       |   Todos   | VQA |
 |       CLEVR-CoGenT v1.0  |    /storage1/datasets/CLEVR_CoGenT_v1.0       |  24 Gb (imagenes) 98 Gb (features)       |   grievous   | VQA |
 |       [Kinetics-400](https://github.com/ialab-puc/cluster/blob/datasets/datasets/kinetics400.MD) |     /mnt/nas/GrimaRepo/datasets/kinetics-400      |       (videos), (frames)   |   Todos   | Video |
