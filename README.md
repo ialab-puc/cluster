@@ -38,14 +38,14 @@ El Cluster utiliza el sistema de colas de Slurm (Simple Linux Universal Resource
 | Nodo     | Modelo                | GPU                   | Cores(fis) | Cores(vir) |
 | -------- | --------------------- | --------------------- | ---------- | ---------- |
 | ahsoka   | Supermicro Thinkmate  | 4 x Titan X (Pascal)  |  20        |  40        |
-| hydra    | Supermicro Thinkmate  | 8 x GeForce GTX1080Ti |  20        |  40        |
-| icarus   | Supermicro Thinkmate  | 1 x Tesla K40m        |  20        |  40        | 
-| kraken   | Dell Poweredge R730   | N/A                   |  24        |  48        |
-| grievous | Supermicro Thinkmate  | 8 x GeForce GTX1080Ti |  20        |  40        | 
-| scylla   | Supermicro Thinkmate  |<p>3 x TITAN RTX<p>1 x GeForce GTX 1080Ti<p>1 x GeForce RTX 2080 |  20        |  40        |
-| Total:   |                       | 26                    | 124        | 248        |
+| grievous | Supermicro Thinkmate  | 8 x GeForce GTX 1080 Ti |  20      |  40        |
+| ventress | Tyan FT77CB7079       | 8 x GeForce RTX 2080 Super | 20    |  40        |
+| yodaxico | Tyan Thunder HX FA77-B7119 |<p>2 x TITAN RTX<p>2 x GeForce RTX 2080 Ti | 20 | 40 |
+| hydra    | Supermicro Thinkmate  | 8 x GeForce GTX 1080 Ti |  20        |  40        |
+| scylla   | Supermicro Thinkmate  |<p>3 x TITAN RTX<p>1 x GeForce GTX 1080 Ti<p>1 x GeForce RTX 2080 |  20        |  40        |
+| Total:   |                       | 37                    | 120        | 248        |
 
-### Topología
+### Topología (outdated)
 ![Topología](/doc/topologia2019ialab.png)
 
 
