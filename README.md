@@ -42,7 +42,7 @@ El Cluster utiliza el sistema de colas de Slurm (Simple Linux Universal Resource
 | ventress | Tyan FT77CB7079       | 8 x GeForce RTX 2080 Super | 20    |  40        |
 | yodaxico | Tyan Thunder HX FA77-B7119 |<p>2 x TITAN RTX<p>2 x GeForce RTX 2080 Ti | 20 | 40 |
 | hydra    | Supermicro Thinkmate  |<p>5 x GeForce GTX 1080 Ti<p>3 x TITAN RTX |  20        |  40        |
-| scylla   | Supermicro Thinkmate  |<p>3 x TITAN RTX<p>2 x GeForce GTX 1080 Ti<p>1 x GeForce RTX 2080i Ti<p>1 x GeForce RTX 2080 Super |  20        |  40        |
+| scylla   | Supermicro Thinkmate  |<p>3 x TITAN RTX<p>2 x GeForce GTX 1080 Ti<p>1 x GeForce RTX 2080 Ti<p>1 x GeForce RTX 2080 Super |  20        |  40        |
 | Total:   |                       | 37                    | 120        | 248        |
 
 ### Topología (outdated)
