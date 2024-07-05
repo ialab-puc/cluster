@@ -59,20 +59,19 @@ Es una versión mejorada de squeue
 ```
 user@kraken:~$ sq
 
- JOBID                   NAME   USER  TIME TASKS CPU CPU/TSK GPU MEM     NODE
-   291                mac-act  user1  1.9d     1                      (ended)
-     3   scan-notebook-server  user2     -     1   2       1   1   -  (hydra)
-   302                mac-act  user2     -     1   5       5   1   -  (hydra)
-   320                 rsscnn  user3     -     1   4       4   1 24G (scylla)
-   322                 rsscnn  user3     -     1   4       4   1 24G (scylla)
-   323                 rsscnn  user3     -     1   4       4   1 24G (scylla)
-   324                 rsscnn  user3     -     1   4       4   1 24G (scylla)
-   325                 rsscnn  user3     -     1   4       4   1 24G (scylla)
-   250             traindummy  user4  4.8d     1   2       1   1   - grievous
-   271    preprocess_hydra.sh  user5  4.8d     1  10      10   - 30G    hydra
-   273   preprocess_scylla.sh  user6  4.8d     1  10      10   - 30G   scylla
-   275 preprocess_grievous.sh  user7  4.8d     1  10      10   - 30G grievous
-
+ JOBID NAME                        USER      TIME        TASKS CPU/TSK CPU   MEM  NODE          GPU  
+ 2569  triceraptops_vetting_s01_10 user1     2-04:19:40  1     4       4     64G  hydra         -    
+ 3009  SFull250                    user2     1-17:33:57  1     1       1     250G grievous      1080_ti:1
+ 3312  sys-txt-repr                user3     19:02:19    2     6       6     257G scylla        2080_super:1|1080_ti:1
+ 3335  sys-txt-repr                user3     19:04:44    2     6       6     257G scylla        2080_ti:1|titan_rtx:1
+ 3495  new_gru_with_gpu            user4     05:43:33    1     4       4     8G   ahsoka        1080_ti:1
+ 3502  py_bp2                      user5     05:16:17    2     2       2     64G  yodaxico      titan_rtx:2
+ 3513  tess_process_astro          user1     04:27:24    1     1       4     80G  hydra         titan_rtx:1
+ 3522  gym_randoms                 user6     03:42:03    1     4       4     64G  scylla        -    
+ 3524  sys-txt-repr                user3     03:35:21    2     6       6     257G scylla        1080_ti:1|titan_rtx:1
+ 3550  notebook                    user3     01:51:30    4     1       4     257G hydra         1080_ti:1
+ 2728  clevr-gen                   user3     00:28:58    4     1       4     257G hydra         titan_rtx:1
+ 2732  clevr-gen                   user3     00:28:58    4     1       4     257G hydra         titan_rtx:1
 ```
 
 ### [srun](https://slurm.schedmd.com/srun.html)
