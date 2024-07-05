@@ -82,7 +82,7 @@ Slurm es muy flexible acerca del manejo de los recursos, permitiendo al usuario 
 #SBATCH --mail-user=usuario@uc.cl    # El mail del usuario
 #SBATCH --time=0-00:05:00            # Timpo limite d-hrs:min:sec
 #SBATCH --output=test_%j.log         # Nombre del output (%j se reemplaza por el ID del trabajo)
-#SBATCH --workdir=/user/mi_usuario   # Direccion donde correr el trabajo
+#SBATCH --chdir=/user/mi_usuario     # Direccion donde correr el trabajo
 #SBATCH --mem-per-cpu=600mb          # Memoria por proceso
 #SBATCH --ntasks=24                  # Numero de MPI ranks
 #SBATCH --cpus-per-task=1            # Numero de cores por MPI rank 

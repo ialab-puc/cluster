@@ -95,7 +95,7 @@ $ cat script.sh
 #SBATCH -e c_job.err                 # STDERR
 #SBATCH --mail-type=END,FAIL         # notificacion cuando el trabajo termine o falle
 #SBATCH --mail-user=usuario@uc.cl    # mail donde mandar las notificaciones
-#SBATCH --chdir=/user/miusuario    # direccion del directorio de trabajo
+#SBATCH --chdir=/user/miusuario      # direccion del directorio de trabajo
 #
 #SBATCH --nodes 1                    # numero de nodos a usar
 #SBATCH --ntasks-per-node=24         # numero de trabajos (procesos) por nodo
@@ -113,7 +113,7 @@ $ cat script-array.sh
 #SBATCH -e slurm-%a.err              # STDERR
 #SBATCH --mail-type=ALL              # notificacion cuando el trabajo termine o falle
 #SBATCH --mail-user=usuario@uc.cl    # mail donde mandar las notificaciones
-#SBATCH --chdir=/user/miusuario    # direccion del directorio de trabajo
+#SBATCH --chdir=/user/miusuario      # direccion del directorio de trabajo
 #
 #SBATCH --ntasks 1                   # 1 trabajo
 #SBATCH --array 1-100%10             # 100 procesos, 10 simultáneos
